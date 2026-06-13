@@ -7,7 +7,7 @@ const app = require('./app');
 
 const frontEndDist = path.join(__dirname, '..', 'frontend', 'dist');
 app.use(express.static(frontEndDist));
-app.get('*', (req, res) => {
+app.use((req, res) => {
   res.sendFile(path.join(frontEndDist, 'index.html'));
 });
 
